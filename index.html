@@ -11,36 +11,17 @@
     <h1>Apps FTW!</h1>
 
 <form onsubmit="return handleSubmit(event), false;">
-    <p>
+    <p id="result" class="low">
         <label>
-            Name: 
-            <input name="name" type="text" value="Elise">
+            How many animals do I have?
+            <input name="guess" type="number">
         </label>
-        
-        <p><label>
-            Comments: 
-            <textarea>
-                I am a comment.
-            </textarea>
-        </label>
-        </p>
-        <input checked value="olives" name="toppings" type="checkbox">Olives
-        <input name="toppings" type="checkbox">Pepperoni
-        <input name="toppings" type="checkbox">Pineapple
-    </p>
-   
-    <p>
-        <textarea></textarea>
-    </p>
-    
-    <p>
-        <input name="grade" type="radio">C
-        <input name="grade" type="radio">A
-        <input name="grade" type="radio">B
-    </p>
 
     <button>Submit</button>
 </form>
+
+<p id="result">Make a guess!</p>
+
     <script src="index.js"></script>
 </body>
 </html>

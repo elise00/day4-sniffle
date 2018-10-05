@@ -3,19 +3,27 @@ var count = 1;
 function handleSubmit(event) {
     var form = event.target;
     var elements = form.elements;
-    
-    var name = elements.name.value; 
-    console.log('name', name);
+    var guess = elements.guess.value;
+    var guessElement = elements.guess;
+    console.log(guessElement.disabled, guessElement.name);
+    var result = document.getElementById('result');
 
-    var comments = elements.comments.value;
-    console.log('comments', comments);
+    result.textContent = 'You made a guess of ' + guess;
 
-    var toppings = elements.toppings.value;
-    console.log('toppings', toppings);
-
-    var grade = elements.grade.value;
-    console.log('grade', grade);
-}
-function sayHello() {
-  console.log('hello world!, for the ', count, 'time'); count++;
+    var correct = 2;
+    // if equal -> correct!
+    if (guess === 2) {
+        result.textContent = 'Correct!';
+        result.class = 'correct';
+    }
+    // else if less than --> too low!
+    if (guess < 2) {
+        result.textContent = 'Too low!';
+        result.class = 'low';
+    }
+    // else -> too high!
+    if (guess > 2) {
+        result.textContent = 'Too high!';
+        result.class = 'high';
+    }
 }
