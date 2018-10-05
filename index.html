@@ -10,18 +10,21 @@
 <body>
     <h1>Apps FTW!</h1>
 
+<form onsubmit="return handleSubmit(event), false;">
     <p>
         <label>
             Name: 
-            <input name="name" type="text">
+            <input name="name" type="text" value="Elise">
         </label>
         
         <p><label>
             Comments: 
-            <textarea></textarea>
+            <textarea>
+                I am a comment.
+            </textarea>
         </label>
         </p>
-        <input name="toppings" type="checkbox">Olives
+        <input checked value="olives" name="toppings" type="checkbox">Olives
         <input name="toppings" type="checkbox">Pepperoni
         <input name="toppings" type="checkbox">Pineapple
     </p>
@@ -31,13 +34,13 @@
     </p>
     
     <p>
+        <input name="grade" type="radio">C
         <input name="grade" type="radio">A
         <input name="grade" type="radio">B
-        <input name="grade" type="radio">C
     </p>
 
-    <button onclick="sayHello()">Click Me!</button>
-    
+    <button>Submit</button>
+</form>
     <script src="index.js"></script>
 </body>
 </html>
