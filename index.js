@@ -1,29 +1,21 @@
-var count = 1;
 
 function handleSubmit(event) {
     var form = event.target;
     var elements = form.elements;
-    var guess = elements.guess.value;
-    var guessElement = elements.guess;
-    console.log(guessElement.disabled, guessElement.name);
-    var result = document.getElementById('result');
+    var toppings = elements.toppings;
 
-    result.textContent = 'You made a guess of ' + guess;
+    // get selected value out of radio buttons
+    var grade = elements.grade;
+    console.log('grade', grade.value);
 
-    var correct = 2;
-    // if equal -> correct!
-    if (guess === 2) {
-        result.textContent = 'Correct!';
-        result.class = 'correct';
+    // get selected values out of checkboxes
+    var selectedToppings = '';
+
+    for(var i = 0; i < toppings.length; i++){
+        var topping = toppings[i];
+        if(topping.checked) {
+            selectedToppings = selectedToppings + ' ' + toppings.value;
+        }
     }
-    // else if less than --> too low!
-    if (guess < 2) {
-        result.textContent = 'Too low!';
-        result.class = 'low';
-    }
-    // else -> too high!
-    if (guess > 2) {
-        result.textContent = 'Too high!';
-        result.class = 'high';
-    }
+    console.log(selectedToppings);
 }
